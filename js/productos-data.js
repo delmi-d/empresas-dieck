@@ -25,7 +25,7 @@ const PRODUCTOS = [
   { id:19, nombre:'Agua Fresca Botella 500 ml.',                precio:15,   img:'img/Botella_500_ml_.jpeg',                              contenido:'500 ml',               empaque:'Botella plastica', tipo:'Agua purificada', categoria:'agua'   },
 ];
 
-const WHATSAPP = '50494804569';
+const WHATSAPP = '50497113417';
 
 /* ═══════════ CART HELPERS ═══════════ */
 function getCart()              { try { return JSON.parse(localStorage.getItem('edd_cart') || '[]'); } catch { return []; } }

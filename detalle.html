@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Producto | EMPRESA DIECK Y DIECK S. DE R.L.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Montserrat','sans-serif']}}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root { --blue:#021D49; --gold:#D4A520; }
+    html { scroll-behavior:smooth; }
+    .nav-link { position:relative; padding-bottom:4px; }
+    .nav-link::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--blue); transition:width .3s; }
+    .nav-link:hover::after { width:100%; }
+    .nav-active { color:var(--blue)!important; font-weight:700; }
+    .nav-active::after { width:100%!important; }
+    .wa-fab { position:fixed; bottom:24px; right:24px; z-index:200; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 18px rgba(0,0,0,.28); transition:transform .2s; }
+    .wa-fab:hover { transform:scale(1.12); }
+    .page-banner { position:relative; background:linear-gradient(135deg,#021D49 0%,#0a3872 55%,#021D49 100%); padding:4rem 1rem; overflow:hidden; }
+    .page-banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 15% 60%,rgba(255,255,255,.06) 0%,transparent 55%),radial-gradient(ellipse at 85% 25%,rgba(212,165,32,.12) 0%,transparent 50%); pointer-events:none; }
+    .qty-btn { width:36px; height:36px; border:2px solid #d1d5db; border-radius:.5rem; font-size:1.2rem; font-weight:700; background:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .2s; }
+    .qty-btn:hover { border-color:var(--blue); color:var(--blue); }
+    .qty-input { width:56px; height:36px; border:2px solid #d1d5db; border-radius:.5rem; text-align:center; font-size:1rem; font-weight:700; outline:none; }
+    .qty-input:focus { border-color:var(--blue); }
+    .add-btn { background:var(--blue); color:#fff; padding:.6rem 1.4rem; border-radius:.6rem; font-weight:700; font-size:.875rem; display:flex; align-items:center; gap:.5rem; cursor:pointer; border:none; transition:opacity .2s; }
+    .add-btn:hover { opacity:.88; }
+    .toast { position:fixed; top:90px; right:20px; z-index:999; background:#16a34a; color:#fff; padding:.75rem 1.2rem; border-radius:.75rem; font-weight:600; font-size:.875rem; box-shadow:0 4px 16px rgba(0,0,0,.2); transform:translateX(120%); transition:transform .35s; display:flex; align-items:center; gap:.5rem; }
+    .toast.show { transform:translateX(0); }
+  </style>
+</head>
+<body class="font-sans text-gray-800 antialiased">
+  <div style="background:var(--blue);" class="text-white py-2 px-4 text-sm">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex gap-4 items-center">
+        <a href="https://instagram.com/arrozmrdieck/" target="_blank" rel="noopener" class="hover:opacity-70 transition"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/dieckydieck/?locale=es_la" target="_blank" rel="noopener" class="hover:opacity-70 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/channel/ucoh0v6exojm-mp8wuajj0ha" target="_blank" rel="noopener" class="hover:opacity-70 transition"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/company/empresa-dieck-y-dieck/" target="_blank" rel="noopener" class="hover:opacity-70 transition"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://m.me/dieck.dieck.395" target="_blank" rel="noopener" class="hover:opacity-70 transition"><i class="fab fa-facebook-messenger"></i></a>
+      </div>
+      <div class="flex gap-5 items-center text-xs sm:text-sm">
+        <a href="mailto:info@edd.hn" class="flex items-center gap-1.5 hover:opacity-75 transition"><i class="fas fa-envelope text-xs"></i><span class="hidden sm:inline">info@edd.hn</span></a>
+        <a href="tel:+50495080698" class="flex items-center gap-1.5 hover:opacity-75 transition"><i class="fas fa-phone text-xs"></i><span>+(504) 9508-0698</span></a>
+      </div>
+    </div>
+  </div>
+  <header id="site-header" class="bg-white shadow-md sticky top-0 z-50 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="edd-replica.html" class="flex-shrink-0">
+        <img src="https://www.edd.hn/archivos/multimedia/logo.png" alt="EDD" class="h-14 md:h-16 object-contain">
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-xs font-bold uppercase tracking-widest">
+        <a href="edd-replica.html" class="nav-link text-gray-700 hover:text-[#021D49] transition">Inicio</a>
+        <a href="productos.html" class="nav-link nav-active transition">Productos</a>
+        <a href="nosotros.html" class="nav-link text-gray-700 hover:text-[#021D49] transition">Nosotros</a>
+        <a href="contactos.html" class="nav-link text-gray-700 hover:text-[#021D49] transition">Contactos</a>
+        <a href="carrito.html" class="nav-link text-gray-700 hover:text-[#021D49] transition  flex items-center gap-0"><i class="fas fa-shopping-cart text-sm"></i>&thinsp;Carrito<span class="cart-badge hidden bg-[#021D49] text-white text-[10px] font-bold rounded-full min-w-[18px] h-[18px] inline-flex items-center justify-center px-1 ml-1"></span></a>
+      </nav>
+      <button id="menuBtn" class="md:hidden p-2 text-gray-700 hover:text-[#021D49] transition focus:outline-none" aria-label="Menu">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+    <nav id="mobileMenu" class="hidden md:hidden border-t bg-white">
+      <div class="flex flex-col px-6 py-2 text-xs font-bold uppercase tracking-widest">
+        <a href="edd-replica.html" class="py-3 border-b border-gray-100 text-gray-700 hover:text-[#021D49] transition mobile-link">Inicio</a>
+        <a href="productos.html" class="py-3 border-b border-gray-100 text-[#021D49] font-bold transition mobile-link">Productos</a>
+        <a href="nosotros.html" class="py-3 border-b border-gray-100 text-gray-700 hover:text-[#021D49] transition mobile-link">Nosotros</a>
+        <a href="contactos.html" class="py-3 border-b border-gray-100 text-gray-700 hover:text-[#021D49] transition mobile-link">Contactos</a>
+        <a href="carrito.html" class="py-3 text-gray-700 hover:text-[#021D49] transition mobile-link  flex items-center gap-2"><i class="fas fa-shopping-cart text-sm"></i>&thinsp;Carrito<span class="cart-badge hidden bg-[#021D49] text-white text-[10px] font-bold rounded-full min-w-[18px] h-[18px] inline-flex items-center justify-center px-1 ml-1"></span></a>
+      </div>
+    </nav>
+  </header>
+  <!-- BANNER (updated dynamically) -->
+  <section class="page-banner" id="pageBanner">
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-2xl md:text-3xl font-extrabold mb-3 tracking-tight drop-shadow" id="bannerTitle">Cargando...</h1>
+      <nav class="flex items-center justify-center gap-2 text-sm text-blue-200 font-medium">
+        <a href="edd-replica.html" class="hover:text-white transition">Inicio</a>
+        <i class="fas fa-chevron-right text-xs"></i>
+        <a href="productos.html" class="hover:text-white transition">Productos</a>
+        <i class="fas fa-chevron-right text-xs"></i>
+        <span class="text-white" id="bcProduct">...</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- PRODUCT DETAIL -->
+  <section class="py-14 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <a href="productos.html" class="inline-flex items-center gap-2 text-sm font-semibold mb-8 hover:underline" style="color:var(--blue);">
+        <i class="fas fa-arrow-left"></i> Volver a Productos
+      </a>
+      <div id="notFound" class="hidden text-center py-20">
+        <i class="fas fa-box-open text-6xl text-gray-300 mb-4 block"></i>
+        <p class="text-xl font-bold text-gray-500 mb-4">Producto no encontrado</p>
+        <a href="productos.html" style="background:var(--blue);" class="inline-block text-white font-bold px-6 py-3 rounded-full">Ver todos los productos</a>
+      </div>
+      <div id="productDetail" class="grid md:grid-cols-2 gap-10 items-start">
+        <!-- Imagen -->
+        <div class="bg-white rounded-2xl shadow-md p-8 flex items-center justify-center min-h-72">
+          <img id="prodImg" src="" alt="" class="max-h-80 object-contain w-full">
+        </div>
+        <!-- Info -->
+        <div class="bg-white rounded-2xl shadow-md p-8">
+          <span id="prodCategoria" class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style="background:rgba(2,29,73,.1);color:var(--blue);"></span>
+          <h1 id="prodNombre" class="text-2xl md:text-3xl font-extrabold text-gray-800 mb-3 leading-tight"></h1>
+          <p id="prodPrecio" class="text-3xl font-extrabold mb-6" style="color:var(--blue);"></p>
+          <div class="border-t border-gray-100 pt-5 mb-6">
+            <table class="w-full text-sm">
+              <tr class="border-b border-gray-50">
+                <td class="py-2 font-bold text-gray-500 uppercase tracking-wide text-xs w-32">Contenido</td>
+                <td id="specContenido" class="py-2 text-gray-700 font-semibold"></td>
+              </tr>
+              <tr class="border-b border-gray-50">
+                <td class="py-2 font-bold text-gray-500 uppercase tracking-wide text-xs">Empaque</td>
+                <td id="specEmpaque" class="py-2 text-gray-700 font-semibold"></td>
+              </tr>
+              <tr>
+                <td class="py-2 font-bold text-gray-500 uppercase tracking-wide text-xs">Tipo</td>
+                <td id="specTipo" class="py-2 text-gray-700 font-semibold"></td>
+              </tr>
+            </table>
+          </div>
+          <!-- Cantidad + carrito -->
+          <div id="addSection" class="hidden border-t border-gray-100 pt-5">
+            <p class="text-xs font-bold uppercase tracking-wide text-gray-500 mb-3">Cantidad</p>
+            <div class="flex items-center gap-3 flex-wrap">
+              <div class="flex items-center gap-1">
+                <button class="qty-btn" onclick="changeQty(-1)">&#8722;</button>
+                <input id="qtyInput" type="number" min="1" value="1" class="qty-input">
+                <button class="qty-btn" onclick="changeQty(1)">&#43;</button>
+              </div>
+              <button class="add-btn" onclick="doAddToCart()">
+                <i class="fas fa-shopping-cart"></i> Añadir al carrito
+              </button>
+            </div>
+          </div>
+          <!-- Sin precio -->
+          <div id="consultSection" class="hidden border-t border-gray-100 pt-5">
+            <a id="consultLink" href="#" target="_blank"
+               class="inline-flex items-center gap-2 font-bold text-white px-6 py-3 rounded-full"
+               style="background:var(--blue);">
+              <i class="fas fa-external-link-alt"></i> Ver en sitio oficial
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"><i class="fas fa-check-circle"></i><span id="toastMsg"></span></div>
+
+  <footer class="bg-gray-900 text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 pt-10 pb-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="bg-white/10 inline-block rounded-xl px-3 py-2 mb-4"><img src="https://www.edd.hn/archivos/multimedia/logo.png" alt="EDD" class="h-12 object-contain"></div>
+          <p class="text-gray-400 text-sm leading-relaxed">Dedicada a la produccion y comercializacion de alimentos por mas de 4 decadas en Honduras.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-3 uppercase tracking-wide text-xs border-b border-gray-700 pb-2">Menu</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="productos.html" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-chevron-right text-xs" style="color:var(--blue);"></i>Nuestros Productos</a></li>
+            <li><a href="nosotros.html" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-chevron-right text-xs" style="color:var(--blue);"></i>Conocenos</a></li>
+            <li><a href="contactos.html" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-chevron-right text-xs" style="color:var(--blue);"></i>Escribenos</a></li>
+            <li><a href="carrito.html" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-shopping-cart text-xs" style="color:var(--blue);"></i>Mi Carrito</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-3 uppercase tracking-wide text-xs border-b border-gray-700 pb-2">Politicas</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://www.edd.hn/Politica-de-Calidad-e-Inocuidad-de-los-Alimentos/" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-chevron-right text-xs" style="color:var(--blue);"></i>Calidad e Inocuidad</a></li>
+            <li><a href="https://www.edd.hn/Politica-de-Derechos-Organizacionales/" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-chevron-right text-xs" style="color:var(--blue);"></i>Derechos Organizacionales</a></li>
+            <li><a href="https://www.edd.hn/Privacidad" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-chevron-right text-xs" style="color:var(--blue);"></i>Privacidad</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-3 uppercase tracking-wide text-xs border-b border-gray-700 pb-2">Contacto</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-0.5 flex-shrink-0" style="color:var(--blue);"></i><span class="text-gray-400">Col. Independencia, Km 23 Carretera al sur, Villanueva, Cortes Honduras.</span></li>
+            <li class="flex items-center gap-3"><i class="fas fa-envelope flex-shrink-0" style="color:var(--blue);"></i><a href="mailto:info@edd.hn" class="text-gray-400 hover:text-white transition">info@edd.hn</a></li>
+            <li class="flex items-center gap-3"><i class="fas fa-phone flex-shrink-0" style="color:var(--blue);"></i><a href="tel:+50495080698" class="text-gray-400 hover:text-white transition">+(504) 9508-0698</a></li>
+            <li class="flex items-center gap-3"><i class="fab fa-whatsapp text-green-400 flex-shrink-0"></i><a href="https://api.whatsapp.com/send?phone=50494804569" class="text-gray-400 hover:text-white transition">+(504) 9480-4569</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-500">
+        <p>Todos los derechos reservados <a href="edd-replica.html" class="text-gray-300 font-semibold hover:text-white transition">EMPRESA DIECK Y DIECK S. DE R.L.</a> &copy; 2026</p>
+        <p>Desarrollado por <a href="http://bluexpace.com/" target="_blank" class="font-semibold hover:text-white transition" style="color:var(--gold);">#Bluexpace</a></p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://api.whatsapp.com/send?phone=50494804569" target="_blank" rel="noopener" class="wa-fab" title="WhatsApp"><i class="fab fa-whatsapp text-white text-2xl"></i></a>
+
+  <script src="js/productos-data.js"></script>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = menuBtn.querySelector('i');
+      icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-times');
+    });
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      const icon = menuBtn.querySelector('i');
+      icon.classList.add('fa-bars'); icon.classList.remove('fa-times');
+    }));
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('shadow-xl', window.scrollY > 20);
+      header.classList.toggle('shadow-md', window.scrollY <= 20);
+    });
+
+    /* ─── Load product ─── */
+    const pid = parseInt(new URLSearchParams(window.location.search).get('id'));
+    const prod = PRODUCTOS.find(p => p.id === pid);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!prod) { document.getElementById('notFound').classList.remove('hidden'); document.getElementById('productDetail').classList.add('hidden'); return; }
+
+      document.title = prod.nombre + ' | EMPRESA DIECK Y DIECK S. DE R.L.';
+      document.getElementById('bannerTitle').textContent = prod.nombre;
+      document.getElementById('bcProduct').textContent   = prod.nombre;
+      document.getElementById('prodImg').src             = prod.img;
+      document.getElementById('prodImg').alt             = prod.nombre;
+      document.getElementById('prodNombre').textContent  = prod.nombre;
+      document.getElementById('prodCategoria').textContent = prod.categoria.toUpperCase();
+      document.getElementById('specContenido').textContent = prod.contenido || '-';
+      document.getElementById('specEmpaque').textContent   = prod.empaque   || '-';
+      document.getElementById('specTipo').textContent      = prod.tipo      || '-';
+
+      if (prod.precio) {
+        document.getElementById('prodPrecio').textContent = formatLps(prod.precio);
+        document.getElementById('addSection').classList.remove('hidden');
+      } else {
+        document.getElementById('prodPrecio').textContent = 'Precio a consultar';
+        document.getElementById('prodPrecio').style.color = '#6b7280';
+        const cs = document.getElementById('consultSection');
+        cs.classList.remove('hidden');
+        document.getElementById('consultLink').href = 'https://www.edd.hn/Tienda/';
+      }
+    });
+
+    function changeQty(delta) {
+      const input = document.getElementById('qtyInput');
+      const newVal = Math.max(1, (parseInt(input.value)||1) + delta);
+      input.value = newVal;
+    }
+
+    function doAddToCart() {
+      const qty = Math.max(1, parseInt(document.getElementById('qtyInput').value)||1);
+      addToCart(prod.id, qty);
+      showToast('¡' + prod.nombre + ' añadido al carrito!');
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2800);
+    }
+  </script>
+</body>
+</html>

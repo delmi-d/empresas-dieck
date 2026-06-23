@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | EMPRESA DIECK Y DIECK S. DE R.L.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Montserrat','sans-serif']}}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root { --blue:#021D49; --gold:#D4A520; }
+    html { scroll-behavior:smooth; }
+    .nav-link { position:relative; padding-bottom:4px; }
+    .nav-link::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--blue); transition:width .3s; }
+    .nav-link:hover::after { width:100%; }
+    .nav-active { color:var(--blue)!important; font-weight:700; }
+    .nav-active::after { width:100%!important; }
+    .wa-fab { position:fixed; bottom:24px; right:24px; z-index:200; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 18px rgba(0,0,0,.28); transition:transform .2s; }
+    .wa-fab:hover { transform:scale(1.12); }
+    .page-banner { position:relative; background:linear-gradient(135deg,#021D49 0%,#0a3872 55%,#021D49 100%); padding:5rem 1rem; overflow:hidden; }
+    .page-banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 15% 60%,rgba(255,255,255,.06) 0%,transparent 55%),radial-gradient(ellipse at 85% 25%,rgba(212,165,32,.12) 0%,transparent 50%); pointer-events:none; }
+    .cat-btn { transition:all .2s; }
+    .cat-btn.active { background:var(--blue)!important; color:#fff!important; border-color:var(--blue)!important; }
+    .product-card { transition:transform .22s, box-shadow .22s; }
+    .product-card:hover { transform:translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,.12); }
+    .product-card.hidden-product { display:none; }
+    .gold-bar { width:56px; height:4px; background:var(--gold); border-radius:999px; margin:0 auto 3rem; }
+  </style>
+</head>
+<body class="font-sans text-gray-800 antialiased">
+
+  <div style="background:var(--blue);" class="text-white py-2 px-4 text-sm">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex gap-4 items-center">
+        <a href="https://instagram.com/arrozmrdieck/" target="_blank" rel="noopener" class="hover:opacity-70 transition"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/dieckydieck/?locale=es_la" target="_blank" rel="noopener" class="hover:opacity-70 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/channel/ucoh0v6exojm-mp8wuajj0ha" target="_blank" rel="noopener" class="hover:opacity-70 transition"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/company/empresa-dieck-y-dieck/" target="_blank" rel="noopener" class="hover:opacity-70 transition"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://m.me/dieck.dieck.395" target="_blank" rel="noopener" class="hover:opacity-70 transition"><i class="fab fa-facebook-messenger"></i></a>
+      </div>
+      <div class="flex gap-5 items-center text-xs sm:text-sm">
+        <a href="mailto:info@edd.hn" class="flex items-center gap-1.5 hover:opacity-75 transition"><i class="fas fa-envelope text-xs"></i><span class="hidden sm:inline">info@edd.hn</span></a>
+        <a href="tel:+50495080698" class="flex items-center gap-1.5 hover:opacity-75 transition"><i class="fas fa-phone text-xs"></i><span>+(504) 9508-0698</span></a>
+      </div>
+    </div>
+  </div>
+  <header id="site-header" class="bg-white shadow-md sticky top-0 z-50 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="edd-replica.html" class="flex-shrink-0">
+        <img src="https://www.edd.hn/archivos/multimedia/logo.png" alt="EDD" class="h-14 md:h-16 object-contain">
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-xs font-bold uppercase tracking-widest">
+        <a href="edd-replica.html" class="nav-link text-gray-700 hover:text-[#021D49] transition">Inicio</a>
+        <a href="productos.html"   class="nav-link nav-active transition">Productos</a>
+        <a href="nosotros.html"    class="nav-link text-gray-700 hover:text-[#021D49] transition">Nosotros</a>
+        <a href="contactos.html"   class="nav-link text-gray-700 hover:text-[#021D49] transition">Contactos</a>
+        <a href="carrito.html"     class="nav-link text-gray-700 hover:text-[#021D49] transition flex items-center">
+          <i class="fas fa-shopping-cart text-sm mr-1"></i>Carrito
+          <span class="cart-badge hidden bg-[#021D49] text-white text-[10px] font-bold rounded-full min-w-[18px] h-[18px] inline-flex items-center justify-center px-1 ml-1"></span>
+        </a>
+      </nav>
+      <button id="menuBtn" class="md:hidden p-2 text-gray-700 hover:text-[#021D49] transition focus:outline-none" aria-label="Menu">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+    <nav id="mobileMenu" class="hidden md:hidden border-t bg-white">
+      <div class="flex flex-col px-6 py-2 text-xs font-bold uppercase tracking-widest">
+        <a href="edd-replica.html" class="py-3 border-b border-gray-100 text-gray-700 hover:text-[#021D49] transition mobile-link">Inicio</a>
+        <a href="productos.html"   class="py-3 border-b border-gray-100 text-[#021D49] font-bold transition mobile-link">Productos</a>
+        <a href="nosotros.html"    class="py-3 border-b border-gray-100 text-gray-700 hover:text-[#021D49] transition mobile-link">Nosotros</a>
+        <a href="contactos.html"   class="py-3 border-b border-gray-100 text-gray-700 hover:text-[#021D49] transition mobile-link">Contactos</a>
+        <a href="carrito.html"     class="py-3 text-gray-700 hover:text-[#021D49] transition mobile-link flex items-center gap-2">
+          <i class="fas fa-shopping-cart"></i>Carrito
+          <span class="cart-badge hidden bg-[#021D49] text-white text-[10px] font-bold rounded-full min-w-[18px] h-[18px] inline-flex items-center justify-center px-1"></span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE BANNER -->
+  <section class="page-banner">
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-3 tracking-tight drop-shadow">Nuestros Productos</h1>
+      <nav class="flex items-center justify-center gap-2 text-sm text-blue-200 font-medium">
+        <a href="edd-replica.html" class="hover:text-white transition">Inicio</a>
+        <i class="fas fa-chevron-right text-xs"></i>
+        <span class="text-white">Productos</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- FILTER + GRID -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        <button data-filter="todos" class="cat-btn active px-5 py-2 rounded-full border-2 border-[#021D49] text-[#021D49] text-sm font-bold uppercase tracking-wide"><i class="fas fa-th-large mr-1"></i> Todos</button>
+        <button data-filter="arroz" class="cat-btn px-5 py-2 rounded-full border-2 border-gray-300 text-gray-600 text-sm font-bold uppercase tracking-wide hover:border-[#021D49] hover:text-[#021D49]"><i class="fas fa-seedling mr-1"></i> Arroz</button>
+        <button data-filter="harina" class="cat-btn px-5 py-2 rounded-full border-2 border-gray-300 text-gray-600 text-sm font-bold uppercase tracking-wide hover:border-[#021D49] hover:text-[#021D49]"><i class="fas fa-bread-slice mr-1"></i> Harina</button>
+        <button data-filter="vasos" class="cat-btn px-5 py-2 rounded-full border-2 border-gray-300 text-gray-600 text-sm font-bold uppercase tracking-wide hover:border-[#021D49] hover:text-[#021D49]"><i class="fas fa-wine-glass mr-1"></i> Vasos</button>
+        <button data-filter="agua" class="cat-btn px-5 py-2 rounded-full border-2 border-gray-300 text-gray-600 text-sm font-bold uppercase tracking-wide hover:border-[#021D49] hover:text-[#021D49]"><i class="fas fa-tint mr-1"></i> Agua</button>
+      </div>
+      <div id="productsGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=1" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Bambi_QQ_VERDE_-_100_Lb_.png" alt="Arroz Bambi QQ VERDE - 100 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Bambi QQ VERDE - 100 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 100 libras</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> 80% grano entero</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 1,400.00</p>
+            <a href="detalle.html?id=1" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=2" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Bambi_SAQ_VERDE_-_25_Lb_.png" alt="Arroz Bambi SAQ VERDE - 25 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Bambi SAQ VERDE - 25 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 25 libras</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> 80% grano entero</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 400.00</p>
+            <a href="detalle.html?id=2" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=3" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Bambi_QQ_ROJO_-_100_Lb_.png" alt="Arroz Bambi QQ ROJO - 100 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Bambi QQ ROJO - 100 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 100 libras</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> 80% grano entero</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 1,400.00</p>
+            <a href="detalle.html?id=3" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=4" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Bambi_SAQ_ROJO_-_25_Lb_.png" alt="Arroz Bambi SAQ ROJO - 25 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Bambi SAQ ROJO - 25 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 25 libras</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> 80% grano entero</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 400.00</p>
+            <a href="detalle.html?id=4" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=5" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Mr__Dieck_QQ_-_100_Lb_.png" alt="Arroz Mr. Dieck QQ - 100 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Mr. Dieck QQ - 100 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 100 libras</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Arroz blanco grano largo</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 1,400.00</p>
+            <a href="detalle.html?id=5" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=6" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Mr__Dieck_SAQ_-_25_Lb_.png" alt="Arroz Mr. Dieck SAQ - 25 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Mr. Dieck SAQ - 25 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 25 libras</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Arroz blanco grano largo</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 400.00</p>
+            <a href="detalle.html?id=6" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=7" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Mr__Dieck_1_75_Kgs__-_3_8_Lb_.png" alt="Arroz Mr. Dieck 1.75 Kgs. - 3.8 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Mr. Dieck 1.75 Kgs. - 3.8 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 3.8 libras</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Arroz blanco grano largo</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 100.00</p>
+            <a href="detalle.html?id=7" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=8" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Mr__Dieck_1_5_Kgs__-_3_3_Lb_.png" alt="Arroz Mr. Dieck 1.5 Kgs. - 3.3 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Mr. Dieck 1.5 Kgs. - 3.3 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 3.3 libras</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Arroz blanco grano largo</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 80.00</p>
+            <a href="detalle.html?id=8" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=9" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Mr__Dieck_454_g__-_Lb_.png" alt="Arroz Mr. Dieck 454 g. - 1 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Mr. Dieck 454 g. - 1 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 1 libra</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Arroz blanco grano largo</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 20.00</p>
+            <a href="detalle.html?id=9" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=10" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Mr__Dieck_350_g_-0_77_Lb.png" alt="Arroz Mr. Dieck 350 g. - 0.77 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Mr. Dieck 350 g. - 0.77 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 350 gramos</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Arroz blanco grano largo</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 15.00</p>
+            <a href="detalle.html?id=10" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=11" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Mr__Dieck_175_g_-0_39_Lb.png" alt="Arroz Mr. Dieck 175 g. - 0.39 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Mr. Dieck 175 g. - 0.39 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 175 gramos</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Arroz blanco grano largo</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 10.00</p>
+            <a href="detalle.html?id=11" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=12" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Mr__Dieck_escaldado_SAQ_-_25_Lb_.png" alt="Arroz Mr. Dieck Escaldado SAQ - 25 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Mr. Dieck Escaldado SAQ - 25 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 25 libras</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Parboiled rice</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 400.00</p>
+            <a href="detalle.html?id=12" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=13" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Mr__Dieck_escaldado_QQ_100_Lb.png" alt="Arroz Mr. Dieck Escaldado QQ - 100 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Mr. Dieck Escaldado QQ - 100 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 100 libras</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Parboiled rice</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 1,400.00</p>
+            <a href="detalle.html?id=13" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="arroz">
+          <a href="detalle.html?id=14" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Arroz_Mr__Dieck_escaldado_1_75_Kgs__-_3_8_Lb_.png" alt="Arroz Mr. Dieck Escaldado 1.75 Kgs. - 3.8 Lb." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Arroz Mr. Dieck Escaldado 1.75 Kgs. - 3.8 Lb.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 3.8 libras</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Parboiled rice</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 100.00</p>
+            <a href="detalle.html?id=14" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="harina">
+          <a href="detalle.html?id=15" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="https://www.edd.hn/archivos/multimedia/Marcas/HarinaManhattan.png" alt="Harina Manhattan" class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Harina Manhattan</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> Variable</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Harina de trigo</li>
+            </ul>
+            <p class="text-xs text-gray-400 italic mt-2">Precio a consultar</p>
+            <a href="detalle.html?id=15" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="harina">
+          <a href="detalle.html?id=16" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="https://www.edd.hn/archivos/multimedia/Marcas/HarinaTrigoMrDieck.png" alt="Harina de Trigo Mr. Dieck" class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Harina de Trigo Mr. Dieck</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> Variable</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Harina de trigo</li>
+            </ul>
+            <p class="text-xs text-gray-400 italic mt-2">Precio a consultar</p>
+            <a href="detalle.html?id=16" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="vasos">
+          <a href="detalle.html?id=17" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="https://www.edd.hn/archivos/multimedia/Marcas/RumbaVasos.png" alt="Rumba Vasos Desechables" class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Rumba Vasos Desechables</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> Variable</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Vasos plasticos</li>
+            </ul>
+            <p class="text-xs text-gray-400 italic mt-2">Precio a consultar</p>
+            <a href="detalle.html?id=17" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="agua">
+          <a href="detalle.html?id=18" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Botelon_5_galones.jpg" alt="Agua Fresca Botelon 5 Galones" class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Agua Fresca Botelon 5 Galones</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 5 galones (18,927 ml)</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Agua purificada</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 50.00</p>
+            <a href="detalle.html?id=18" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden" data-category="agua">
+          <a href="detalle.html?id=19" class="block bg-gray-50 flex items-center justify-center p-4 h-44 hover:opacity-90 transition">
+            <img src="img/Botella_500_ml_.jpeg" alt="Agua Fresca Botella 500 ml." class="max-h-36 object-contain">
+          </a>
+          <div class="p-4">
+            <h3 class="font-bold text-sm text-gray-800 mb-1 leading-snug">Agua Fresca Botella 500 ml.</h3>
+            <ul class="text-xs text-gray-500 space-y-0.5">
+              <li><span class="font-semibold text-gray-600">Contenido:</span> 500 ml</li>
+              <li><span class="font-semibold text-gray-600">Tipo:</span> Agua purificada</li>
+            </ul>
+            <p class="font-extrabold text-base mt-2" style="color:var(--blue);">L. 15.00</p>
+            <a href="detalle.html?id=19" class="mt-2 flex items-center gap-1 text-xs font-bold hover:underline" style="color:var(--blue);">Ver detalles <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="https://www.edd.hn/Tienda/" target="_blank" style="background:var(--blue);" class="inline-flex items-center gap-2 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:opacity-90 transition">
+          Ver catalogo completo <i class="fas fa-external-link-alt text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 pt-10 pb-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="bg-white/10 inline-block rounded-xl px-3 py-2 mb-4"><img src="https://www.edd.hn/archivos/multimedia/logo.png" alt="EDD" class="h-12 object-contain"></div>
+          <p class="text-gray-400 text-sm leading-relaxed">Dedicada a la produccion y comercializacion de alimentos por mas de 4 decadas en Honduras.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-3 uppercase tracking-wide text-xs border-b border-gray-700 pb-2">Menu</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="productos.html" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-chevron-right text-xs" style="color:var(--blue);"></i>Nuestros Productos</a></li>
+            <li><a href="nosotros.html" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-chevron-right text-xs" style="color:var(--blue);"></i>Conocenos</a></li>
+            <li><a href="contactos.html" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-chevron-right text-xs" style="color:var(--blue);"></i>Escribenos</a></li>
+            <li><a href="carrito.html" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-shopping-cart text-xs" style="color:var(--blue);"></i>Mi Carrito</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-3 uppercase tracking-wide text-xs border-b border-gray-700 pb-2">Politicas</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://www.edd.hn/Politica-de-Calidad-e-Inocuidad-de-los-Alimentos/" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-chevron-right text-xs" style="color:var(--blue);"></i>Calidad e Inocuidad</a></li>
+            <li><a href="https://www.edd.hn/Politica-de-Derechos-Organizacionales/" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-chevron-right text-xs" style="color:var(--blue);"></i>Derechos Organizacionales</a></li>
+            <li><a href="https://www.edd.hn/Privacidad" class="flex items-center gap-2 hover:text-white transition"><i class="fas fa-chevron-right text-xs" style="color:var(--blue);"></i>Privacidad</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-3 uppercase tracking-wide text-xs border-b border-gray-700 pb-2">Contacto</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-0.5 flex-shrink-0" style="color:var(--blue);"></i><span class="text-gray-400">Col. Independencia, Km 23, Villanueva, Cortes Honduras.</span></li>
+            <li class="flex items-center gap-3"><i class="fas fa-envelope flex-shrink-0" style="color:var(--blue);"></i><a href="mailto:info@edd.hn" class="text-gray-400 hover:text-white transition">info@edd.hn</a></li>
+            <li class="flex items-center gap-3"><i class="fas fa-phone flex-shrink-0" style="color:var(--blue);"></i><a href="tel:+50495080698" class="text-gray-400 hover:text-white transition">+(504) 9508-0698</a></li>
+            <li class="flex items-center gap-3"><i class="fab fa-whatsapp text-green-400 flex-shrink-0"></i><a href="https://api.whatsapp.com/send?phone=50494804569" class="text-gray-400 hover:text-white transition">+(504) 9480-4569</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-500">
+        <p>Todos los derechos reservados EMPRESA DIECK Y DIECK S. DE R.L. &copy; 2026</p>
+        <p>Desarrollado por <a href="http://bluexpace.com/" target="_blank" class="font-semibold hover:text-white transition" style="color:var(--gold);">#Bluexpace</a></p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://api.whatsapp.com/send?phone=50494804569" target="_blank" rel="noopener" class="wa-fab" title="WhatsApp"><i class="fab fa-whatsapp text-white text-2xl"></i></a>
+
+  <script src="js/productos-data.js"></script>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); const icon=menuBtn.querySelector('i'); icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-times'); });
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => { mobileMenu.classList.add('hidden'); const icon=menuBtn.querySelector('i'); icon.classList.add('fa-bars'); icon.classList.remove('fa-times'); }));
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => { header.classList.toggle('shadow-xl', window.scrollY>20); header.classList.toggle('shadow-md', window.scrollY<=20); });
+    const filterBtns = document.querySelectorAll('.cat-btn');
+    const productCards = document.querySelectorAll('#productsGrid .product-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        productCards.forEach(c => c.classList.toggle('hidden-product', f!=='todos' && c.dataset.category!==f));
+      });
+    });
+  </script>
+</body>
+</html>
